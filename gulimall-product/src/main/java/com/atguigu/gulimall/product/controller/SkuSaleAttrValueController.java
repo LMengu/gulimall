@@ -3,6 +3,7 @@ package com.atguigu.gulimall.product.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+//import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,7 @@ import com.atguigu.common.utils.R;
  *
  * @author limengyu
  * @email limengyu@gmail.com
- * @date 2020-07-03 15:01:04
+ * @date 2020-07-12 14:33:52
  */
 @RestController
 @RequestMapping("product/skusaleattrvalue")
