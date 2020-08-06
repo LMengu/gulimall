@@ -57,6 +57,8 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
+        <!--文件上传-->
+
 
     </dependencies>
     <dependencyManagement>
