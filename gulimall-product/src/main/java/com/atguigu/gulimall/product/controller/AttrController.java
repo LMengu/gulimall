@@ -1,9 +1,11 @@
 package com.atguigu.gulimall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
+import com.atguigu.gulimall.product.entity.ProductAttrValueEntity;
 import com.atguigu.gulimall.product.service.AttrService;
 import com.atguigu.gulimall.product.service.ProductAttrValueService;
 import com.atguigu.gulimall.product.vo.AttrRespVo;
@@ -33,6 +35,13 @@ public class AttrController {
     @Autowired
     ProductAttrValueService productAttrValueService;
 
+
+    ///product/attr/base/listforspu/{spuId}
+    @GetMapping("/base/listforspu/{spuId")
+    public R baseAttrListforspu(@PathVariable("spuId")Long spuId){
+        List<ProductAttrValueEntity> entities = productAttrValueService.baseAttrListforspu(spuId);
+        return R.ok().put("data",null);
+    }
 
     //product/attr/sale/list/0?
     ///product/attr/base/list/{catelogId}
@@ -82,6 +91,18 @@ public class AttrController {
 
     ///product/attrgroup/attr/relation/delete
 
+
+    /**
+     * 修改
+     */
+    ///product/attr/update/{spuId}
+    @RequestMapping("/update/{spuId}")
+    //@RequiresPermissions("product:attr:update")
+    public R updatespuAttr(@PathVariable("spuId")Long spuId,
+                           @RequestBody List<ProductAttrValueEntity> entities){
+        productAttrValueService.updateSpuAttr(spuId,entities);
+        return R.ok();
+    }
 
     /**
      * 修改
